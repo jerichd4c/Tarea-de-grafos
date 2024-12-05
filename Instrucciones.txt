@@ -1,6 +1,6 @@
 1. Realizar un informe donde expliquen la lógica detrás de la creación de un grafo y las maneras diferentes de implementar dicha lógica en código (min. 2).
 
-*Manera recursiva y no recursiva.
+*Lista adyacente y matriz de adyacencia.
 
 2. Crear las plantillas de las maneras explicadas en el informe, y sus pruebas en un archivo main aparte.
 
