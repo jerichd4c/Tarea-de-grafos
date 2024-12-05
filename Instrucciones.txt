@@ -20,11 +20,9 @@ Consideraciones para crear el informe:
 
 4. Bibliografia
 
-*verificar si tiene un limite de palabras.
+*No tiene un limite de palabras pero tampoco ser tan largo
 
-*verificar si se tiene que entregar en .PDF o .TXT
-
-*Importante: verificar si las dos maneras es por lista de adyacencia y matriz o de manera recursiva y no recursiva
+*Importante: es por lista de adyecencia y matriz de adyecencia
 
 NT: el programa tiene que seguir las normas de los grafos
 
