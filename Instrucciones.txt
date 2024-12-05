@@ -22,7 +22,8 @@ Consideraciones para crear el informe:
 
 *No tiene un limite de palabras pero tampoco ser tan largo
 
-*Importante: es por lista de adyecencia y matriz de adyecencia
+*Importante: es por lista de adyecencia y matriz de adyecencia 
+NT: Grafos dirigidos y no dirigidos para las dos, se puede usar dos clases en un mismo archivo
 
 NT: el programa tiene que seguir las normas de los grafos
 
