@@ -20,7 +20,7 @@ public:
     }
 
     // Función para agregar una arista al grafo dirigido
-    void addEdge(int i, int j) {
+    void addDirectedEdge(int i, int j) {
         adjMatrix[i][j] = 1; // i a j
     }
 
@@ -61,7 +61,7 @@ public:
     }
 
     // Función para agregar una arista al grafo no dirigido
-    void AddUndirectedEdge(int i, int j) {
+    void addUndirectedEdge(int i, int j) {
         adjMatrix[i][j] = 1; // i a j
         adjMatrix[j][i] = 1; // j a i en grafo no dirigido
     }
@@ -86,34 +86,70 @@ public:
 
 int main() {
 
-    cout<<"Grafo dirigido: \n";
     // Output para el grafo dirigido
     DirectedGraph<int> g(5);
-    g.addEdge(0, 1);
-    g.addEdge(0, 4);
-    g.addEdge(1, 2);
-    g.addEdge(1, 3);
-    g.addEdge(1, 4);
-    g.addEdge(2, 3);
-    g.addEdge(3, 4);
-    // Imprimir el grafo
-    g.PrintDirectedGraph();
-    
-    cout<<"\n";
-
-    cout<<"Grafo no dirigido: \n";
+    g.addDirectedEdge(0, 1);
+    g.addDirectedEdge(0, 4);
+    g.addDirectedEdge(1, 2);
+    g.addDirectedEdge(1, 3);
+    g.addDirectedEdge(1, 4);
+    g.addDirectedEdge(2, 3);
+    g.addDirectedEdge(3, 4);
     
     // Output para el grafo no dirigido
     UndirectedGraph<int> h(5);
-    h.AddUndirectedEdge(0, 1);
-    h.AddUndirectedEdge(0, 4);
-    h.AddUndirectedEdge(1, 2);    
-    h.AddUndirectedEdge(1, 3);
-    h.AddUndirectedEdge(1, 4);    
-    h.AddUndirectedEdge(2, 3);
-    h.AddUndirectedEdge(3, 4);
-    // Imprimir el grafo
-    h.PrintUndirectedGraph();
+    h.addUndirectedEdge(0, 1);
+    h.addUndirectedEdge(0, 4);
+    h.addUndirectedEdge(1, 2);
+    h.addUndirectedEdge(1, 3);
+    h.addUndirectedEdge(1, 4);
+    h.addUndirectedEdge(2, 3);
+    h.addUndirectedEdge(3, 4);
+    
+    int choice;
+    
+do {
+    
+    cout<<"\n";
 
-    return 0;
+    cout<<"Seleccione el tipo de grafo: \n";
+    cout<<"1. Grafo dirigido \n";
+    cout<<"2. Grafo no dirigido \n";
+    cout<<"3. Ambos grafos \n";
+    cout<<"4. Salir \n";
+    cout<<"Opcion: ";
+    cin>>choice;
+
+    cout<<"\n";
+
+    switch (choice) {
+        case 1: {
+            cout<<"Grafo dirigido: \n";
+            g.PrintDirectedGraph(); // Imprimir el grafo dirigido
+            break;
+        }
+        case 2: {
+            cout<<"Grafo no dirigido: \n";
+            h.PrintUndirectedGraph(); // Imprimir el grafo no dirigido
+            break;
+        }
+        case 3: {
+            cout<<"Grafo dirigido: \n";
+            g.PrintDirectedGraph(); // Imprimir el grafo dirigido
+            cout<<"\nGrafo no dirigido: \n";
+            h.PrintUndirectedGraph(); // Imprimir el grafo no dirigido
+            break;
+        }
+        case 4: {
+            cout<<"Saliendo del programa...\n";
+            break;
+        }
+        default: {
+            cout<<"Opcion no valida, intente de nuevo \n";
+            break;
+        }
+    }
+} while (choice != 4); // Repetir el menu hasta que se seleccione la opcion 4 (salir)
+
+return 0;
 }

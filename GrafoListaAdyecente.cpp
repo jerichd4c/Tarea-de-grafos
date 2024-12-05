@@ -122,10 +122,6 @@ int main() {
     SetConsoleOutputCP(CP_UTF8); // Establece la salida en UTF-8, caracteres especiales en español
     SetConsoleCP(CP_UTF8);       // Establece la entrada en UTF-8, caracteres especiales en español
     
-    cout<<"\n";
-
-    cout<<"Grafo dirigido: \n";
-    
     // Output para el grafo dirigido
     DirectedGraph<int> g(5);
     g.addDirectedEdge(0, 1);
@@ -135,12 +131,6 @@ int main() {
     g.addDirectedEdge(1, 4);
     g.addDirectedEdge(2, 3);
     g.addDirectedEdge(3, 4);
-    // Imprimir el grafo
-    g.PrintDirectedGraph();
-    
-    cout<<"\n";
-
-    cout<<"Grafo no dirigido: \n";
     
     // Output para el grafo no dirigido
     UndirectedGraph<int> h(5);
@@ -151,8 +141,51 @@ int main() {
     h.AddUndirectedEdge(1, 4);
     h.AddUndirectedEdge(2, 3);
     h.AddUndirectedEdge(3, 4);
-    // Imprimir el grafo
-    h.PrintUndirectedGraph();
+    
+    int choice;
+    
+do {
+    
+    cout<<"\n";
 
-    return 0;
+    cout<<"Seleccione el tipo de grafo: \n";
+    cout<<"1. Grafo dirigido \n";
+    cout<<"2. Grafo no dirigido \n";
+    cout<<"3. Ambos grafos \n";
+    cout<<"4. Salir \n";
+    cout<<"Opcion: ";
+    cin>>choice;
+
+    cout<<"\n";
+
+    switch (choice) {
+        case 1: {
+            cout<<"Grafo dirigido: \n";
+            g.PrintDirectedGraph(); // Imprimir el grafo dirigido
+            break;
+        }
+        case 2: {
+            cout<<"Grafo no dirigido: \n";
+            h.PrintUndirectedGraph(); // Imprimir el grafo no dirigido
+            break;
+        }
+        case 3: {
+            cout<<"Grafo dirigido: \n";
+            g.PrintDirectedGraph(); // Imprimir el grafo dirigido
+            cout<<"\nGrafo no dirigido: \n";
+            h.PrintUndirectedGraph(); // Imprimir el grafo no dirigido
+            break;
+        }
+        case 4: {
+            cout<<"Saliendo del programa...\n";
+            break;
+        }
+        default: {
+            cout<<"Opcion no valida, intente de nuevo \n";
+            break;
+        }
+    }
+} while (choice != 4); // Repetir el menu hasta que se seleccione la opcion 4 (salir)
+
+return 0;
 }
